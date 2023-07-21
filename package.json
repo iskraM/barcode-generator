@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "html2pdf.js": "^0.10.1",
     "jsbarcode": "^3.11.5",
+    "jszip": "^3.10.1",
     "vue": "^3.2.13"
   },
   "devDependencies": {
