@@ -2,8 +2,8 @@
 	<div class="main-container">
 		<h1 class="title">Barcode Generator</h1>
 		<div class="dropdown-container">
-			<label for="barcode-format">Select Barcode Format:</label>
-			<select id="barcode-format" v-model="selectedFormat" @change="generateBarcodes">
+			<label for="barcode-format">Select Format:</label>
+			<select class="custom-dropdown" id="barcode-format" v-model="selectedFormat" @change="generateBarcodes">
 				<option value="CODE128">CODE128</option>
 				<option value="CODE39">CODE39</option>
 				<option value="EAN8">EAN8</option>
@@ -165,6 +165,34 @@ export default {
 
 .dropdown-container label {
 	margin-right: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
+}
+
+/* Custom styles for the dropdown */
+.custom-dropdown {
+	padding: 8px 16px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23333' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 8px center/16px 16px;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+/* Hover effect for the dropdown */
+.custom-dropdown:hover {
+	border-color: #007bff;
+}
+
+/* Focus style for the dropdown */
+.custom-dropdown:focus {
+	outline: none;
+	box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.3);
 }
 
 .dropdown-container select {
@@ -252,8 +280,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+	background-color: #0056b3;
 }
-
 </style>
   
