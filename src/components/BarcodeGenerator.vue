@@ -144,11 +144,23 @@ export default {
 	margin: 0 auto;
 }
 
+@media (max-width: 800px) {
+	.main-container {
+		width: 95%;
+	}
+}
+
 .generator-container {
 	height: 83%;
 	display: flex;
 	justify-content: space-between;
 	align-items: stretch;
+}
+
+@media (max-height: 700px) {
+	.generator-container {
+		height: 75%;
+	}
 }
 
 .title {

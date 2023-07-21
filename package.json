@@ -1,11 +1,31 @@
 {
   "name": "barcode-generator",
-  "version": "0.1.0",
+  "productName": "Barcode Generator",
+  "version": "1.0.0",
+  "main": "main.js",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "electron": "electron .",
+    "electron:build": "electron-builder",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
+  },
+  "build": {
+    "appId": "si.minty.barcode-generator",
+    "directories": {
+      "output": "release",
+      "buildResources": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "src/assets/barcode.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true
+    }
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -20,6 +40,8 @@
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "electron": "^25.3.1",
+    "electron-builder": "^24.4.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3"
   },
