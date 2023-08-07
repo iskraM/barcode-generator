@@ -21,8 +21,11 @@
 			<div class="barcodes-section">
 				<div class="barcodes-scrollable" ref="pdfContainer">
 					<template v-for="(line, index) in inputLines" :key="index">
-						<div v-if="line.startsWith('//')" class="barcode-text">
-							<h3>{{ line.substring(2) }}</h3>
+						<div v-if="line.startsWith('//') && line.substring(2).trim().length > 0" class="barcode-text">
+							<h3>{{ line.trim().substring(2) }}</h3>
+						</div>
+						<div v-else-if="line.startsWith('//') && line.substring(2).trim().length === 0" class="barcode-text">
+							<div style="height: 50px;" />
 						</div>
 						<div v-else class="barcode-item">
 							<img :src="barcodeList[index]" alt="Barcode" />
@@ -64,7 +67,7 @@ export default {
 					const canvas = document.createElement("canvas");
 
 					try {
-						JsBarcode(canvas, line, {
+						JsBarcode(canvas, line.trim(), {
 							format: this.selectedFormat, // Change this to other formats like "CODE39", "EAN13", etc.
 							displayValue: true,
 							fontSize: 16,
