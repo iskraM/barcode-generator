@@ -1,0 +1,7 @@
+{
+    "name": "barcode-generator",
+    "productName": "Barcode Generator",
+    "version": "1.0.0",
+    "license": "Minty",
+    "main": "main.js"
+}

@@ -142,8 +142,8 @@ export default {
 <style>
 .main-container {
 	background-color: #f7f7f7;
-	height: 100%;
-	width: 60%;
+	height: 99%;
+	width: 80%;
 	margin: 0 auto;
 }
 
